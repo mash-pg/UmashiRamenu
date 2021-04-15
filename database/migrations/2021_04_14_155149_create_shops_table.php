@@ -16,13 +16,13 @@ class CreateShopsTable extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->increments('id');
             $table->string('shop_name');
-            $table->text('accsess');
+            $table->text('access');
             $table->text('kodawari');
             $table->text('business_day')->nullable();
             $table->string('tel');
             $table->text('parking_area');
             $table->text('seat');
-            $table->integer('smooking_id');
+            $table->integer('smoking_id');
         });
     }
 
