@@ -27,8 +27,6 @@ class MenuFactory extends Factory
         $menu_id = Menu::all()->random(10)[0]->id;
 
         return [
-            //
-            'type' => $this->faker->title,
             'shop_id' => $shop_id,
             'menu_id'=> $menu_id,
             'price' => rand(1000,1500)."円"."〜".rand(1501,2000)."円",
