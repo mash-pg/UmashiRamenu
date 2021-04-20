@@ -3,8 +3,9 @@
 namespace Database\Factories;
 
 
-use App\Models\Smoking;
+use App\Models\Shop;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 class ShopFactory extends Factory
 {
@@ -22,7 +23,8 @@ class ShopFactory extends Factory
      */
     public function definition()
     {
-        $smoking_id = Smoking::all()->random(7)[0]->id;
+
+
         return [
             'shop_name' => $this->faker->title,
             'access' =>  $this->faker->address,
@@ -30,8 +32,7 @@ class ShopFactory extends Factory
             'business_day' =>  $this->faker->realText(50),
             'tel' =>  $this->faker->phoneNumber,
             'parking_area' => $this->faker->address,
-            'seat' => $this->faker->realText(50),
-            'smoking_id' => $smoking_id
+            'seat' => $this->faker->realText(50)
         ];
     }
 }
