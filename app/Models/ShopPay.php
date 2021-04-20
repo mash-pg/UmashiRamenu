@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ShopPay extends Model
 {
     use HasFactory;
+    protected $table = 'shops_pays';
 }

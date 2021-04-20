@@ -9,4 +9,5 @@ use App\Models\Image;
 class ImageType extends Model
 {
     use HasFactory;
+    protected $table = 'images_type';
 }
