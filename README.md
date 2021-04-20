@@ -44,8 +44,7 @@
 2.DBを作成する  
 
 3.テーブルを作成する
-  1. php artisan migrateを実行して下さい。  
-
+  1. php artisan migrateを実行して下さい。
   ```
      php artisan migrate
      上記でうまく行かない場合は、下記コマンド 
@@ -60,7 +59,7 @@
      php artisan db:seed
      上記でうまく行かない場合は、下記コマンド 
      ./vessel art db:seed 
-  　```
+   ```
    
 2. php command:delete にてテーブルデータの中身を削除する
    ```
