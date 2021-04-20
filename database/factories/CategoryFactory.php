@@ -23,7 +23,7 @@ class CategoryFactory extends Factory
     {
 
         return [
-            'type' => $this->faker->title
+            'type' => uniqid("category_")
         ];
     }
 }
