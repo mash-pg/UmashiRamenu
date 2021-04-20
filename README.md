@@ -43,7 +43,6 @@
 
 2.DBeaveをインストールしてmysqlと連携する
 - 下記設定で接続可能
-    - DB名　umashiramen
     - ポート　3306
     - user名　root
 
