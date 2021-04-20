@@ -20,6 +20,7 @@ class CreateMenusTable extends Migration
             $table->text('price');
             $table->string('menu');
             $table->string('img');
+            $table->timestamps();
         });
     }
 
