@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\MenuType;
 use Illuminate\Database\Eloquent\Factories\Factory;
+USE Illuminate\Support\Str;
 
 class MenuTypeFactory extends Factory
 {
@@ -22,8 +23,6 @@ class MenuTypeFactory extends Factory
     public function definition()
     {
         return [
-            'type' => $this->faker->title,
-            'img' => "img/menu/".Str::random(4)."/"
         ];
     }
 }

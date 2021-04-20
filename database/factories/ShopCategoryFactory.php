@@ -25,13 +25,7 @@ class ShopCategoryFactory extends Factory
      */
     public function definition()
     {
-        //categoriesとshopsのidをランダムに取得する
-        $shop_id = Shop::all()->random(10)[0]->id;
-        $category_id = Category::all()->random(7)[0]->id;
-
         return [
-            'shop_id' => $shop_id,
-            'category_id' => $category_id
         ];
     }
 }

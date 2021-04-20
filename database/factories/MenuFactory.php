@@ -23,15 +23,7 @@ class MenuFactory extends Factory
      */
     public function definition()
     {
-        $shop_id = Shop::all()->random(10)[0]->id;
-        $menu_id = Menu::all()->random(10)[0]->id;
-
         return [
-            'shop_id' => $shop_id,
-            'menu_id'=> $menu_id,
-            'price' => rand(1000,1500)."円"."〜".rand(1501,2000)."円",
-            'menu' => "ラーメン"."_".Str::random(1),
-            'img' => $shop_id."/".Str::random(5).".jpg"
         ];
     }
 }

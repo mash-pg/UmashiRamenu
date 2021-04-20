@@ -22,8 +22,6 @@ class ImageTypeFactory extends Factory
     public function definition()
     {
         return [
-            'type' => $this->faker->title,
-            'path' => "img/".Str::random(5)."/"
         ];
     }
 }

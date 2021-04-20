@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Smoking;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SmokingFactory extends Factory
@@ -22,7 +23,6 @@ class SmokingFactory extends Factory
     public function definition()
     {
         return [
-            'type' => $this->faker->title
         ];
     }
 }

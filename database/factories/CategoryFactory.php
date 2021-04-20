@@ -23,7 +23,6 @@ class CategoryFactory extends Factory
     {
 
         return [
-            'type' => uniqid("category_")
         ];
     }
 }

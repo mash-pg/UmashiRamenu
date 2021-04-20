@@ -22,16 +22,7 @@ class ImageFactory extends Factory
      */
     public function definition()
     {
-        //
-        $shop_id = Shop::all()->random(10)[0]->id;
-        $image_id = Image::all()->random(10)[0]->id;
-
         return [
-            //
-            'type' => $this->faker->title,
-            'shop_id' => $shop_id,
-            'image_id'=> $image_id,
-            'path' => $image_id."/dumy".rand(1,10)."png"
         ];
     }
 }
