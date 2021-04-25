@@ -17,6 +17,7 @@ class CreateShopsPaysTable extends Migration
             $table->increments('id');
             $table->integer('shop_id');
             $table->integer('pay_id');
+            $table->timestamps();
         });
     }
 

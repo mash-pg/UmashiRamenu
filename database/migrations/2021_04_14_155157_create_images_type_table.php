@@ -17,6 +17,7 @@ class CreateImagesTypeTable extends Migration
             $table->increments('id');
             $table->string('type')->unique();
             $table->string('path')->unique();
+            $table->timestamps();
         });
     }
 

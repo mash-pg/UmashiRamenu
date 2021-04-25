@@ -18,6 +18,7 @@ class CreateImagesTable extends Migration
             $table->integer('shop_id');
             $table->integer('type_id');
             $table->string('img');
+            $table->timestamps();
         });
     }
 

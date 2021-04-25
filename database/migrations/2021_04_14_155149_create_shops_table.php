@@ -23,6 +23,7 @@ class CreateShopsTable extends Migration
             $table->text('parking_area');
             $table->text('seat');
             $table->integer('smoking_id');
+            $table->timestamps();
         });
     }
 

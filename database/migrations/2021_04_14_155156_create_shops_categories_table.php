@@ -17,6 +17,7 @@ class CreateShopsCategoriesTable extends Migration
             $table->increments('id');
             $table->integer('shop_id');
             $table->integer('category_id');
+            $table->timestamps();
         });
     }
 

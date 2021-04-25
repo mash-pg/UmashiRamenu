@@ -15,14 +15,15 @@ class CreateSmokingTable extends Migration
     {
         Schema::create('smoking', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('smoking');
+            $table->string('type')->unique();
+            $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * @reurn void
      */
     public function down()
     {
