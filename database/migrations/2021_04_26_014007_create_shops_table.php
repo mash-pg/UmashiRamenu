@@ -18,6 +18,7 @@ class CreateShopsTable extends Migration
             $table->string('shop_name')->unique();
             $table->text('business_day');
             $table->text('kodawari');
+            $table->text('tel');
             $table->integer('smoking_id');
             $table->timestamps();
         });
