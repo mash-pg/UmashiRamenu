@@ -23,6 +23,7 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
+            'comments' =>  $this->faker->realText(216),
         ];
     }
 }

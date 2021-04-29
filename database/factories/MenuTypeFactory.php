@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\MenuType;
 use Illuminate\Database\Eloquent\Factories\Factory;
-USE Illuminate\Support\Str;
 
 class MenuTypeFactory extends Factory
 {

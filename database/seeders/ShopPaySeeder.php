@@ -29,8 +29,8 @@ class ShopPaySeeder extends Seeder
         }
 
         for($j=0;$j<10;$j++){
-            $key=array_rand($shop_id_rnd);
-            $key1=array_rand($pay_id_rnd);
+            $key=shuffle($shop_id_rnd);
+            $key1=shuffle($pay_id_rnd);
             ShopPay::factory()->create([
                 'shop_id' => $shop_id_rnd[$key],
                 'pay_id' => $pay_id_rnd[$key1]

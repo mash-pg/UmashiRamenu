@@ -2,9 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Image;
 use App\Models\Menu;
-use App\Models\Shop;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MenuFactory extends Factory

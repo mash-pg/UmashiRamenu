@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Smoking;
+use App\Models\Seat;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class SmokingFactory extends Factory
+class SeatFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Smoking::class;
+    protected $model = Seat::class;
 
     /**
      * Define the model's default state.
@@ -22,6 +22,7 @@ class SmokingFactory extends Factory
     public function definition()
     {
         return [
+            //
         ];
     }
 }

@@ -23,16 +23,9 @@ class ShopFactory extends Factory
      */
     public function definition()
     {
-
-
         return [
-            'shop_name' => $this->faker->title,
-            'access' =>  $this->faker->address,
             'kodawari' =>  $this->faker->realText(512),
             'business_day' =>  $this->faker->realText(50),
-            'tel' =>  $this->faker->phoneNumber,
-            'parking_area' => $this->faker->address,
-            'seat' => $this->faker->realText(50)
         ];
     }
 }

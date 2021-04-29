@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-
 use App\Models\Image;
 use App\Models\ImageType;
 use App\Models\Shop;
@@ -29,8 +28,8 @@ class ImageSeeder extends Seeder
         }
 
         for($j=0;$j<6;$j++){
-            $key=array_rand($shop_id_rnd);
-            $key1=array_rand($menu_id_rnd);
+            $key=shuffle($shop_id_rnd);
+            $key1=shuffle($menu_id_rnd);
 
             $img = array(
                 $shop_id_rnd[$key]."/testA.jpg",
@@ -38,7 +37,7 @@ class ImageSeeder extends Seeder
                 $shop_id_rnd[$key]."/testB.jpg",
                 $shop_id_rnd[$key]."/testC.jpg",
                 $shop_id_rnd[$key]."/testC.jpg",
-                $shop_id_rnd[$key]."/testE.jpg",
+                $shop_id_rnd[$key]."/testD.jpg",
             );
 
             Image::factory()->create([

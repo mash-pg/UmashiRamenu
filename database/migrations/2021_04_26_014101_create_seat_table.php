@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSmokingTable extends Migration
+class CreateSeatTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateSmokingTable extends Migration
      */
     public function up()
     {
-        Schema::create('smoking', function (Blueprint $table) {
+        Schema::create('seat', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type')->unique();
+            $table->integer('shop_id');
+            $table->integer('type_id');
+            $table->integer('seat');
+            $table->integer('table_number');
+            $table->integer('table_seat');
             $table->timestamps();
         });
     }
@@ -23,10 +27,10 @@ class CreateSmokingTable extends Migration
     /**
      * Reverse the migrations.
      *
-     * @reurn void
+     * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('smoking');
+        Schema::dropIfExists('seat');
     }
 }

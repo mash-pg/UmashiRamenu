@@ -6,7 +6,6 @@ use App\Models\MenuType;
 use App\Models\Menu;
 use App\Models\Shop;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Log;
 
 class MenuSeeder extends Seeder
 {
@@ -32,9 +31,9 @@ class MenuSeeder extends Seeder
         }
 
         for($j=0;$j<5;$j++){
-            $key=array_rand($shop_id_rnd);
-            $key1=array_rand($menu_id_rnd);
-           $price = array(
+            $key=shuffle($shop_id_rnd);
+            $key1=shuffle($menu_id_rnd);
+            $price = array(
                 '1200円',
                 '350円',
                 '1000円',
@@ -55,7 +54,7 @@ class MenuSeeder extends Seeder
                 $shop_id_rnd[$key]."/testB.jpg",
                 $shop_id_rnd[$key]."/testC.jpg",
             );
-           Menu::factory()->create([
+            Menu::factory()->create([
                 'shop_id' => $shop_id_rnd[$key],
                 'type_id' => $menu_id_rnd[$key1],
                 'price' => $price[$j],
