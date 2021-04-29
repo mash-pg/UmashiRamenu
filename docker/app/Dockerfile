@@ -9,7 +9,6 @@ WORKDIR /var/www/html
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=UTC
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
 RUN apt-get update \
     && apt-get install -y gnupg gosu curl ca-certificates zip unzip git supervisor sqlite3 \
     && mkdir -p ~/.gnupg \
