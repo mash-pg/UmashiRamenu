@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Smoking;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SmokingFactory extends Factory
