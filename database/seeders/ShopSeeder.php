@@ -19,10 +19,19 @@ class ShopSeeder extends Seeder
         $smoking_id = Smoking::all();
 
         for ($i=0; $i < 2; $i++) {
+            $shop_name = array(
+                '町田商店',
+                '長浜ラーメン',
+            );
+            $tel = array(
+                '080-2222-4444',
+                '072-2222'
+            );
            Shop::factory()->create([
+                'shop_name' => $shop_name[$i],
+                'tel' => $tel[$i],
                 'smoking_id' => $smoking_id[$i]["id"]
             ]);
         }
-
     }
 }
