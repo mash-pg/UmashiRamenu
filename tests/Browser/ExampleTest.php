@@ -16,8 +16,12 @@ class ExampleTest extends DuskTestCase
     public function testBasicExample()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('http://localhost')
-                    ->assertSee('Laravel');
+            //duskで$browse->visit('/shop/top')のh1?に店舗名がある確認コード
+            $browser->visit('http://localhost/shops/1')
+                ->assertSee('町田商店test');
+
+            $browser->visit('http://localhost/shops/1')
+                ->assertSee('町田商店');
         });
     }
 }
