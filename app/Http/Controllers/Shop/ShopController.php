@@ -47,6 +47,12 @@ class ShopController extends Controller
         //
     }
 
+    public function show_ref($id){
+        //店舗情報
+        $shops = Shop::findOrFail($id);
+
+        return view('shops.show_ref', compact("shops"));
+    }
     /**
      * Display the specified resource.
      *
