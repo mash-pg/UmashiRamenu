@@ -5,17 +5,25 @@
     </head>
     <body>
     <h1>店舗ページ</h1>
-    <h1>{{$shops->shop_name}}</h1>
+    <h1>{{$shop->shop_name}}</h1>
     <h1>メニュー</h1>
-{{--    @foreach ($menus as $key => $values )--}}
-{{--　　　　　--}}{{--いずれは、６で改行するようにする--}}
-{{--        @if(($key+1) % 6 === 0)--}}
-{{--            &nbsp;{{$values}}<br>--}}
-{{--        @else--}}
-{{--            {{$values}}&nbsp;--}}
-{{--        @endif--}}
-{{--    @endforeach--}}
-{{--    <h1>イメージ画像</h1>--}}
+
+
+{{--    6こに分けたいや　メニューと料金の間に「：」を入れたい　などは表示上の問題なのでview側or(view model)で解決する。--}}
+    <div style="display: grid;  grid-column: 1 / 3;grid-template-columns: repeat(3, 1fr);column-gap: 12px;">
+        @foreach($shop->menus_ref as $menu)
+            <div>
+                {{$menu->menu}}:{{$menu->price}}
+            </div>
+        @endforeach
+    </div>
+
+    <h1>イメージ画像</h1>
+    @foreach($shop->images_ref as $image)
+        <div>
+            {{$image->type->type}} / {{$image->image_path}}
+        </div>
+    @endforeach
 {{--    @foreach ($images as $key => $values )--}}
 {{--        {{$values}}<br>--}}
 {{--        <img src={{$values}} alt="ラーメン画像と内観イメージ">--}}
