@@ -57,12 +57,7 @@ class ShopController extends Controller
     {
 
         //店舗情報
-        $shops = Shop::find($id);
-
-        //店舗idがデータベースにない場合
-        if(!$shops){
-            return view('errors.404');
-        }
+        $shops = Shop::findOrFail($id);
 
         //店舗idの取得
         $shop_id = $shops->id;
