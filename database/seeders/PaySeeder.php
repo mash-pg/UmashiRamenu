@@ -15,10 +15,11 @@ class PaySeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 2; $i++) {
+        for ($i=0; $i < 3; $i++) {
             $pay_type = array(
                 'クレジット',
-                '電子マネー'
+                '電子マネー',
+                'QRコード決済'
             );
             Pay::factory()->create([
                 'type' => $pay_type[$i],

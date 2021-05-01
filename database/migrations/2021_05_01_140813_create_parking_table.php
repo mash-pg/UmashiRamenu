@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccsessTable extends Migration
+class CreateParkingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateAccsessTable extends Migration
      */
     public function up()
     {
-        Schema::create('accsess', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('parking', function (Blueprint $table) {
+            $table->id();
             $table->integer('shop_id')->unique();
-            $table->integer('post_number_1');
-            $table->integer('post_number_2');
-            $table->string('prefectures');
-            $table->string('address1');
-            $table->string('address2');
-            $table->string('address3');
+            $table->integer('parking');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateAccsessTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accsess');
+        Schema::dropIfExists('parking');
     }
 }

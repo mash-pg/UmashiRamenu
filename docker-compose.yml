@@ -43,6 +43,10 @@ services:
      # - ./docker/mysql/logs:/var/log/mysql
     networks:
      - vessel
+  selenium:
+    image: selenium/standalone-chrome
+    ports:
+      - 4444:4444
   redis:
     image: redis:alpine
     volumes:
