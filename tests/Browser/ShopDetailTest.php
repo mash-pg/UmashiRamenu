@@ -35,31 +35,33 @@ class ShopDetailTest extends DuskTestCase
 
             //メニュー
             $browser->visit('http://localhost/shops/1')
-                ->assertSee('チャーシュー')
-                ->assertSee('350円')
                 ->assertSee('ラーメンB')
                 ->assertSee('1000円');
 
             //イメージ画像
             $browser->visit('http://localhost/shops/1')
+                ->assertSee('img/out/1/testA.jpg')
                 ->assertSee('img/out/1/testC.jpg')
-                ->assertSee('img/menu/ramen/1/testA.jpg')
-                ->assertSee('img/menu/ramen/1/testB.jpg')
-                ->assertSee('img/inner/1/testB.jpg');
+                ->assertSee('img/inner/1/testD.jpg')
+                ->assertSee('img/menu/ippin/1/testB.jpg');
 
             //電話番号
             $browser->visit('http://localhost/shops/1')
                 ->assertSee('080-2222-4444');
 
+            //営業日
+            $browser->visit('http://localhost/shops/1')
+                ->assertSee('いのなから水へ落おち着ついて叫さけん命めい延のびあがり、');
+
             //こだわり
             $browser->visit('http://localhost/shops/1')
-                ->assertSee('べんきょくをつぶすながら、銅どうも化学かが、ちょってみせよほど深ふかん');
+                ->assertSee('をもうまるでもなかぎをもった。汽車だったよ」さっきの、ほんとしまわり、');
 
             //アクセス
             //郵便番号
             $browser->visit('http://localhost/shops/1')
-                ->assertSee('206')
-                ->assertSee('7078');
+                ->assertSee('599')
+                ->assertSee('3760');
 
             //住所
             $browser->visit('http://localhost/shops/1')
@@ -69,17 +71,16 @@ class ShopDetailTest extends DuskTestCase
 
             //ジャンル
             $browser->visit('http://localhost/shops/1')
-                ->assertSee('醤油ラーメン')
                 ->assertSee('塩ラーメン')
-                ->assertSee('豚骨ラーメン')
-                ->assertSee('魚介系ラーメン');
+                ->assertSee('醤油ラーメン')
+                ->assertSee('オリジナルラーメン');
 
             //座席数
             $browser->visit('http://localhost/shops/1')
-                ->assertSee('総座席数：30')
-                ->assertSee('テーブル席4つ')
-                ->assertSee('5人席')
-                ->assertSee('10席');
+                ->assertSee('総座席数：32')
+                ->assertSee('テーブル席5つ')
+                ->assertSee('4人席')
+                ->assertSee('12席');
 
             //喫煙
             $browser->visit('http://localhost/shops/1')
@@ -96,12 +97,12 @@ class ShopDetailTest extends DuskTestCase
 
             //予算
             $browser->visit('http://localhost/shops/1')
-                ->assertSee('1463円')
-                ->assertSee('92718円');
+                ->assertSee('1120円')
+                ->assertSee('67318円');
 
             //店舗備考
             $browser->visit('http://localhost/shops/1')
-                ->assertSee('標しんばんの旅人たちは参観さんはっきのよう');
+                ->assertSee('しんしゅのようなもの肩かたくなったようです');
         });
     }
 }
