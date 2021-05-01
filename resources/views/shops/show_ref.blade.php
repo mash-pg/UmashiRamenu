@@ -62,8 +62,8 @@
     <h1>駐車場</h1>
     <p>駐車場 : {{is_null($shop->parking_ref) ? "不可能" : "可能"}}</p>
     <h1>予算</h1>
-{{--    <p>予算：{{$budget->min}}円〜{{$budget->max}}円</p>--}}
-{{--    <h1>店舗備考</h1>--}}
-{{--    <p>店舗備考：{{$shop_etc->etc}}</p>--}}
+    <p>予算：{{$shop->budget_ref->min}}円〜{{$shop->budget_ref->max}}円</p>
+    <h1>店舗備考</h1>
+    <p>店舗備考：{{$shop->shop_etc_ref->etc}}</p>
     </body>
 </html>

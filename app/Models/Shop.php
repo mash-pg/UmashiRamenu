@@ -41,6 +41,14 @@ class Shop extends Model
     {
         return $this->hasOne(Parking::class);
     }
+    public function budget_ref()
+    {
+        return $this->hasOne(Budget::class);
+    }
+    public function shop_etc_ref()
+    {
+        return $this->hasOne(ShopEtc::class);
+    }
 
     public function menus()
     {

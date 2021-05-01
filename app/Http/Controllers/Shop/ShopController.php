@@ -58,7 +58,9 @@ class ShopController extends Controller
                 "categories",
                 "seat_ref",
                 "smoking_ref",
-                "parking_ref"
+                "parking_ref",
+                "budget_ref",
+                "shop_etc_ref"
             ])->findOrFail($id);
 
 
@@ -77,6 +79,7 @@ class ShopController extends Controller
          *
          * 余談：データベースの話で、menusのpriceに「円」を入れない。
          * priceの検索ができなくなるし「円」は表示上の問題
+         * 予算の表示実装あたりが正しいです。
          *
          */
 
