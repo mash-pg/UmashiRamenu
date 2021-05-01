@@ -43,16 +43,16 @@
         {{$shop->access_ref->address2}}
         {{$shop->access_ref->address3}}
     </p>
-{{--    <h1>ジャンル</h1>--}}
-{{--    @foreach ($categories as $key => $values )--}}
-{{--        {{$values}}--}}
-{{--    @endforeach--}}
-{{--    <h1>座席数</h1>--}}
-{{--    <p>総座席数：{{$seats->seat}}</p>--}}
-{{--    <p>テーブル席：テーブル席{{$seats->table_number}}つ {{$seats->table_seat}}人席</p>--}}
-{{--    <p>カウンター：{{$seats->counter}}席</p>--}}
-{{--    <h1>喫煙</h1>--}}
-{{--    <p>{{$smoking->type}}</p>--}}
+    <h1>ジャンル</h1>
+    @foreach ($shop->categories as $category )
+        {{$category->type}}
+    @endforeach
+    <h1>座席数</h1>
+    <p>総座席数：{{$shop->seat_ref->seat}}</p>
+    <p>テーブル席：テーブル席{{$shop->seat_ref->table_number}}つ {{$shop->seat_ref->table_seat}}人席</p>
+    <p>カウンター：{{$shop->seat_ref->counter}}席</p>
+    <h1>喫煙</h1>
+    <p>{{$shop->smoking_ref->type}}</p>
 {{--    <h1>支払い系</h1>--}}
 {{--    <p>--}}
 {{--        @foreach ($credit_type as $key => $values )--}}

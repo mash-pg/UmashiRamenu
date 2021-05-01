@@ -25,10 +25,17 @@ class Shop extends Model
     public function images_ref(){
         return $this->hasMany(Image::class)->with(["type"]);
     }
-
     public function access_ref()
     {
         return $this->hasOne(Access::class);
+    }
+    public function seat_ref()
+    {
+        return $this->hasOne(Seat::class);
+    }
+    public function smoking_ref()
+    {
+        return $this->belongsTo(Smoking::class, "smoking_id");
     }
 
     public function menus()

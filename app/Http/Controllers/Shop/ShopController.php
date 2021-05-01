@@ -51,13 +51,22 @@ class ShopController extends Controller
         //店舗情報
         //eager load
         //詳細画面はメインの１店舗のみの情報を扱うので単数系
-        $shop = Shop::with(["menus_ref", "images_ref", "access_ref"])->findOrFail($id);
+        $shop = Shop::with([
+                "menus_ref",
+                "images_ref",
+                "access_ref",
+                "categories",
+                "seat_ref",
+                "smoking_ref"
+            ])->findOrFail($id);
 
 
         /**
          * ①全体を通して、表示上の問題なのか、ビジネスロジックなのかを分ける。
          *
          * ②imagesと比べてmenusのimgのパスの最後にスラッシュがない。MenusModelでそこの差分吸収している
+         *
+         * ③座席のテーブル構造がおかしい？ typeが機能してない
          *
          *
          * 余談：データベースの話で、menusのpriceに「円」を入れない。
