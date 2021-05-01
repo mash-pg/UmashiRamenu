@@ -13,4 +13,11 @@ class Image extends Model
     public function type(){
         return $this->belongsTo(ImageType::class);
     }
+
+    public function getImagePathAttribute(){
+        return sprintf("%s%s",
+            $this->type->path,
+            $this->img
+        );
+    }
 }

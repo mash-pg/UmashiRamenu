@@ -21,7 +21,7 @@
     <h1>イメージ画像</h1>
     @foreach($shop->images_ref as $image)
         <div>
-            {{$image->type->type}} / {{$image->image_path}}
+            {{$image->type->type}}イメージ || {{$image->image_path}}
         </div>
     @endforeach
 {{--    @foreach ($images as $key => $values )--}}
