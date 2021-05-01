@@ -26,6 +26,11 @@ class Shop extends Model
         return $this->hasMany(Image::class)->with(["type"]);
     }
 
+    public function access_ref()
+    {
+        return $this->hasOne(Access::class);
+    }
+
     public function menus()
     {
         $table = 'menus';

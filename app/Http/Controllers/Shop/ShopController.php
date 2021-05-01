@@ -51,7 +51,7 @@ class ShopController extends Controller
         //店舗情報
         //eager load
         //詳細画面はメインの１店舗のみの情報を扱うので単数系
-        $shop = Shop::with(["menus", "images"])->findOrFail($id);
+        $shop = Shop::with(["menus_ref", "images_ref", "access_ref"])->findOrFail($id);
 
 
         /**

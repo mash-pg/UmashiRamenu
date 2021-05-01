@@ -29,24 +29,20 @@
             {{$menus->type->type}}イメージ || {{$menus->image_path}}
         </div>
     @endforeach
-{{--    @foreach ($images as $key => $values )--}}
-{{--        {{$values}}<br>--}}
-{{--        <img src={{$values}} alt="ラーメン画像と内観イメージ">--}}
-{{--    @endforeach--}}
-{{--    <h1>電話番号</h1>--}}
-{{--    <p>{{$shops->tel}}</p>--}}
-{{--    <h1>営業日</h1>--}}
-{{--    <p>{{$shops->business_day}}</p>--}}
-{{--    <h1>こだわり</h1>--}}
-{{--    <p>{{$shops->kodawari}}</p>--}}
-{{--    <h1>アクセス</h1>--}}
-{{--    <p>{{$access->post_number_1}}-{{$access->post_number_2}}</p>--}}
-{{--    <p>--}}
-{{--        {{$access->prefecture}}--}}
-{{--        {{$access->address1}}--}}
-{{--        {{$access->address2}}--}}
-{{--        {{$access->address3}}--}}
-{{--    </p>--}}
+    <h1>電話番号</h1>
+    <p>{{$shop->tel}}</p>
+    <h1>営業日</h1>
+    <p>{{$shop->business_day}}</p>
+    <h1>こだわり</h1>
+    <p>{{$shop->kodawari}}</p>
+    <h1>アクセス</h1>
+    <p>{{$shop->access_ref->zip_code}}</p>
+    <p>
+        {{$shop->access_ref->prefecture}}
+        {{$shop->access_ref->address1}}
+        {{$shop->access_ref->address2}}
+        {{$shop->access_ref->address3}}
+    </p>
 {{--    <h1>ジャンル</h1>--}}
 {{--    @foreach ($categories as $key => $values )--}}
 {{--        {{$values}}--}}
