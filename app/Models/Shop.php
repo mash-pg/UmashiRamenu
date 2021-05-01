@@ -18,6 +18,14 @@ class Shop extends Model
         return $this->belongsToMany($class,$table,$id,'category_id');
     }
 
+    public function menus_ref()
+    {
+        return $this->hasMany(Menu::class)->with(["type"]);
+    }
+    public function images_ref(){
+        return $this->hasMany(Image::class)->with(["type"]);
+    }
+
     public function menus()
     {
         $table = 'menus';
