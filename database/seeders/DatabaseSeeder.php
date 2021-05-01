@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ShopSeeder::class);
         $this->call(AccessSeeder::class);
         $this->call(ShopEtcSeeder::class);
+        $this->call(ParkingSeeder::class);
 
         //カテゴリーテーブル
         $this->call(CategorySeeder::class);
