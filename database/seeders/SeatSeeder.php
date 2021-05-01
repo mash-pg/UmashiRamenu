@@ -30,13 +30,15 @@ class SeatSeeder extends Seeder
         for ($i = 0;$i<5;$i++){
             $table_number = rand(4,5);
             $table_seat = rand(4,5);
-            $seat = $table_number * $table_seat;
+            $counter = rand(10,15);
+            $seat = ($table_number * $table_seat) + $counter;
             $key=shuffle($shop_id_rnd);
             $key1=shuffle($seat_id_rnd);
             Seat::factory()->create([
                 'shop_id' => $shop_id_rnd[$key],
                 'type_id' => $seat_id_rnd[$key1],
                 'seat' => $seat,
+                'counter' => $counter,
                 'table_number' => $table_number,
                 'table_seat' => $table_seat,
             ]);
