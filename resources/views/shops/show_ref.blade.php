@@ -24,6 +24,11 @@
             {{$image->type->type}}イメージ || {{$image->image_path}}
         </div>
     @endforeach
+    @foreach($shop->menus_ref as $menus)
+        <div>
+            {{$menus->type->type}}イメージ || {{$menus->image_path}}
+        </div>
+    @endforeach
 {{--    @foreach ($images as $key => $values )--}}
 {{--        {{$values}}<br>--}}
 {{--        <img src={{$values}} alt="ラーメン画像と内観イメージ">--}}

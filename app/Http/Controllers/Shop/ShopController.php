@@ -55,9 +55,9 @@ class ShopController extends Controller
 
 
         /**
-         * 全体を通して、表示上の問題なのか、ビジネスロジックなのかを分ける。
+         * ①全体を通して、表示上の問題なのか、ビジネスロジックなのかを分ける。
          *
-         * 表示上の問題はView側がModel解決する。
+         * ②imagesと比べてmenusのimgのパスの最後にスラッシュがない。MenusModelでそこの差分吸収している
          *
          *
          * 余談：データベースの話で、menusのpriceに「円」を入れない。
