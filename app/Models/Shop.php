@@ -37,6 +37,10 @@ class Shop extends Model
     {
         return $this->belongsTo(Smoking::class, "smoking_id");
     }
+    public function parking_ref()
+    {
+        return $this->hasOne(Parking::class);
+    }
 
     public function menus()
     {

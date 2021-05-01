@@ -57,7 +57,8 @@ class ShopController extends Controller
                 "access_ref",
                 "categories",
                 "seat_ref",
-                "smoking_ref"
+                "smoking_ref",
+                "parking_ref"
             ])->findOrFail($id);
 
 
@@ -68,6 +69,11 @@ class ShopController extends Controller
          *
          * ③座席のテーブル構造がおかしい？ typeが機能してない
          *
+         * ④ペイメントは可能であれば表示しているのが普通では？
+         * もし不可能も表示したければ、不可能フラグを持つべき。現状はコードで書いているので増えたら対応できない。
+         * もしくは現状やっているような不可能な支払いを出すための、比較用のテーブルを作成するか
+         *
+         * ⑤パーキングは台数ではなく、利用可能不可能であれば、カラム名は違うものをつけるべき
          *
          * 余談：データベースの話で、menusのpriceに「円」を入れない。
          * priceの検索ができなくなるし「円」は表示上の問題

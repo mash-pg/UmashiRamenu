@@ -53,17 +53,15 @@
     <p>カウンター：{{$shop->seat_ref->counter}}席</p>
     <h1>喫煙</h1>
     <p>{{$shop->smoking_ref->type}}</p>
-{{--    <h1>支払い系</h1>--}}
-{{--    <p>--}}
-{{--        @foreach ($credit_type as $key => $values )--}}
-{{--            {{$values}}<br>--}}
-{{--        @endforeach--}}
-{{--    </p>--}}
-{{--    <h1>駐車場</h1>--}}
-{{--    @foreach ($parking_area as $key => $values )--}}
-{{--        駐車場：{{$values}}<br>--}}
-{{--    @endforeach--}}
-{{--    <h1>予算</h1>--}}
+    <h1>支払い系</h1>
+    <p>
+        @foreach ($shop->pays as $pay )
+            {{$pay->type}}:可能<br>
+        @endforeach
+    </p>
+    <h1>駐車場</h1>
+    <p>駐車場 : {{is_null($shop->parking_ref) ? "不可能" : "可能"}}</p>
+    <h1>予算</h1>
 {{--    <p>予算：{{$budget->min}}円〜{{$budget->max}}円</p>--}}
 {{--    <h1>店舗備考</h1>--}}
 {{--    <p>店舗備考：{{$shop_etc->etc}}</p>--}}
