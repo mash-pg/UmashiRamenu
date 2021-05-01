@@ -18,6 +18,7 @@ class CreateSeatTable extends Migration
             $table->integer('shop_id');
             $table->integer('type_id');
             $table->integer('seat');
+            $table->integer('counter');
             $table->integer('table_number');
             $table->integer('table_seat');
             $table->timestamps();
