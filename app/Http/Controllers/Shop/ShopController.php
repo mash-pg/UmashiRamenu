@@ -47,6 +47,44 @@ class ShopController extends Controller
         //
     }
 
+    public function show_ref($id){
+        //店舗情報
+        //eager load
+        //詳細画面はメインの１店舗のみの情報を扱うので単数系
+        $shop = Shop::with([
+                "menus_ref",
+                "images_ref",
+                "access_ref",
+                "categories",
+                "seat_ref",
+                "smoking_ref",
+                "parking_ref",
+                "budget_ref",
+                "shop_etc_ref"
+            ])->findOrFail($id);
+
+
+        /**
+         * ①全体を通して、表示上の問題なのか、ビジネスロジックなのかを分ける。
+         *
+         * ②imagesと比べてmenusのimgのパスの最後にスラッシュがない。MenusModelでそこの差分吸収している
+         *
+         * ③座席のテーブル構造がおかしい？ typeが機能してない
+         *
+         * ④ペイメントは可能であれば表示しているのが普通では？
+         * もし不可能も表示したければ、不可能フラグを持つべき。現状はコードで書いているので増えたら対応できない。
+         * もしくは現状やっているような不可能な支払いを出すための、比較用のテーブルを作成するか
+         *
+         * ⑤パーキングは台数ではなく、利用可能不可能であれば、カラム名は違うものをつけるべき
+         *
+         * 余談：データベースの話で、menusのpriceに「円」を入れない。
+         * priceの検索ができなくなるし「円」は表示上の問題
+         * 予算の表示実装あたりが正しいです。
+         *
+         */
+
+        return view('shops.show_ref', compact("shop"));
+    }
     /**
      * Display the specified resource.
      *

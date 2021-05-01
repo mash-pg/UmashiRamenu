@@ -9,4 +9,19 @@ class Menu extends Model
 {
     use HasFactory;
     protected $table = 'menus';
+
+    public function type(){
+        return $this->belongsTo(MenuType::class);
+    }
+
+    /**
+     * メニューの画像パスを合わせて返す
+     * @return string
+     */
+    public function getImagePathAttribute(){
+        return sprintf("%s/%s",
+            $this->type->path,
+            $this->img
+        );
+    }
 }

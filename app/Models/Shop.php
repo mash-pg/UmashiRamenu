@@ -18,6 +18,38 @@ class Shop extends Model
         return $this->belongsToMany($class,$table,$id,'category_id');
     }
 
+    public function menus_ref()
+    {
+        return $this->hasMany(Menu::class)->with(["type"]);
+    }
+    public function images_ref(){
+        return $this->hasMany(Image::class)->with(["type"]);
+    }
+    public function access_ref()
+    {
+        return $this->hasOne(Access::class);
+    }
+    public function seat_ref()
+    {
+        return $this->hasOne(Seat::class);
+    }
+    public function smoking_ref()
+    {
+        return $this->belongsTo(Smoking::class, "smoking_id");
+    }
+    public function parking_ref()
+    {
+        return $this->hasOne(Parking::class);
+    }
+    public function budget_ref()
+    {
+        return $this->hasOne(Budget::class);
+    }
+    public function shop_etc_ref()
+    {
+        return $this->hasOne(ShopEtc::class);
+    }
+
     public function menus()
     {
         $table = 'menus';
