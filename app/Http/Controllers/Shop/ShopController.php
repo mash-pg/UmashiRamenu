@@ -49,9 +49,23 @@ class ShopController extends Controller
 
     public function show_ref($id){
         //店舗情報
-        $shops = Shop::findOrFail($id);
+        //eager load
+        //詳細画面はメインの１店舗のみの情報を扱うので単数系
+        $shop = Shop::with(["menus", "images"])->findOrFail($id);
 
-        return view('shops.show_ref', compact("shops"));
+
+        /**
+         * 全体を通して、表示上の問題なのか、ビジネスロジックなのかを分ける。
+         *
+         * 表示上の問題はView側がModel解決する。
+         *
+         *
+         * 余談：データベースの話で、menusのpriceに「円」を入れない。
+         * priceの検索ができなくなるし「円」は表示上の問題
+         *
+         */
+
+        return view('shops.show_ref', compact("shop"));
     }
     /**
      * Display the specified resource.
