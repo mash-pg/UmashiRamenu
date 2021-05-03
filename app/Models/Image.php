@@ -9,4 +9,10 @@ class Image extends Model
 {
     use HasFactory;
     protected $table = 'images';
+
+    public function type(){
+
+        //１対１（イメージタイプテーブルからイメージテーブル）
+        return $this->belongsTo(ImageType::class);
+    }
 }

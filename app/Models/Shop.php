@@ -10,32 +10,24 @@ class Shop extends Model
     use HasFactory;
     protected $table = 'shops';
 
+    public function menus(){
+        //１対多(店舗テーブルからメニュー)
+        //var_export(Menu::class->with("type"));
+        return $this->hasMany(Menu::class->with("type"));
+    }
+
+    public function images(){
+        //１対多(店舗テーブルから画像)
+        //var_export(Image::class->with("type"));
+        return $this->hasMany(Image::class->with("type"));
+    }
+
     public function categories()
     {
         $table = 'shops_categories';
         $class = Category::class;
         $id = 'shop_id';
         return $this->belongsToMany($class,$table,$id,'category_id');
-    }
-
-    public function menus()
-    {
-        $table = 'menus';
-        $class = MenuType::class;
-        $id = 'shop_id';
-        return $this
-            ->belongsToMany($class,$table,$id,'type_id')
-            ->withPivot('price','menu','img');
-    }
-
-    public function images(){
-        $table = 'images';
-        $class = ImageType::class;
-        $id = 'shop_id';
-
-        return $this
-            ->belongsToMany($class,$table,$id,'type_id')
-            ->withPivot('img','comments');
     }
 
     public function pays(){
