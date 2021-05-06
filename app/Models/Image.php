@@ -9,4 +9,22 @@ class Image extends Model
 {
     use HasFactory;
     protected $table = 'images';
+
+    public function type(){
+
+        //１対１（イメージタイプテーブルからイメージテーブル）
+        return $this->belongsTo(ImageType::class);
+
+    }
+
+    /**
+     * 画像のパスを返す
+     * @return string
+     * */
+    public function getImagePathAttribute(){
+        return sprintf("%s%s",
+            $this->type->path,
+             $this->img
+        );
+    }
 }
