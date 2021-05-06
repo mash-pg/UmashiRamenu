@@ -57,13 +57,10 @@ class ShopController extends Controller
     {
 
         //店舗情報
-        $shops = Shop::findOrFail($id);
+        $shop = Shop::findOrFail($id);
 
 
-        return view('shops.show', compact(
-            'shops','smoking',
-            'access','categories','menus','price','images',
-            'seats','credit_type','budget','shop_etc','parking_area'));
+        return view('shops.show', compact('shop'));
     }
 
     /**
