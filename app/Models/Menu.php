@@ -15,4 +15,14 @@ class Menu extends Model
         //1対1の関係（メニュータイプからメニューへアクセス）
         return $this->belongsTo(MenuType::class);
     }
+
+    /**
+     * メニューのパスを返す
+     * @return string
+     * */
+    public function getMenuPathAttribute(){
+        return sprintf("%s%s",
+            $this->type->path,
+            $this->img);
+    }
 }
