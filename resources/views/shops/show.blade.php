@@ -12,10 +12,14 @@
         {{$menu->menu}}:{{$menu->price}}
     @endforeach
     </div>
-
     <h1>イメージ画像</h1>
     @foreach($shop->images as $image)
         {{$image->type->type}} || {{$image->image_path}}
+    @endforeach
+    @foreach($shop->menus as $menus)
+        <div>
+            {{$menus->type->type}}イメージ || {{$menus->image_path}}
+        </div>
     @endforeach
     <h1>電話番号</h1>
     <p>{{$shop->tel}}</p>
